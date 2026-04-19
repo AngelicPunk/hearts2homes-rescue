@@ -56,7 +56,7 @@
       
       <div class="hidden md:flex items-center gap-8">
         <a href="#about" class="font-medium hover:text-red-700 transition-colors">About</a>
-        <a href="#pets" class="font-medium hover:text-red-700 transition-colors">Adopt</a>
+        <a href="https://new.shelterluv.com/matchme/adopt/HHRI/Dog?fbclid=IwY2xjawRSQhNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5peS1N1WOythfl1PRsIuUEN684DzQ2Pq4Igm3nXX0v4ObJK9GrM9rHAv0qWw_aem_Cll69NA_NTxcRPCytY4pRQ" class="font-medium hover:text-red-700 transition-colors">Adopt</a>
         <a href="#help" class="font-medium hover:text-red-700 transition-colors">How to Help</a>
         <button onclick="alert('Thank you for your support! ❤️\n\nDonation link would go here.')" 
                 class="px-6 py-2.5 rounded-full font-semibold text-white transition-all hover:-translate-y-0.5"
@@ -130,23 +130,6 @@
     </div>
   </section>
 
-  <!-- Adoptable Pets Section -->
-  <section id="pets" class="py-20 px-6" style="background-color: var(--color-surface);">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background-color: var(--color-primary); color: white;">
-          Find Your Match
-        </span>
-        <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Dogs Ready for Adoption</h2>
-        <p class="text-lg opacity-70 max-w-2xl mx-auto">
-          Each dog has been vet-checked, vaccinated, spayed/neutered, and microchipped. They're ready to find their forever homes!
-        </p>
-      </div>
-
-      <div id="pets-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </div>
-  </section>
-
   <!-- How to Help Section -->
   <section id="help" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
@@ -178,7 +161,7 @@
              class="block w-full py-3 rounded-full font-semibold text-white text-center"
              style="background-color: var(--color-primary);">
             Join Us
-          </a>
+          </a>x
         </div>
 
         <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
@@ -229,7 +212,7 @@
           <h4 class="font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 opacity-70 text-sm">
             <li><a href="#about" class="hover:underline">About Us</a></li>
-            <li><a href="#pets" class="hover:underline">Adoptable Pets</a></li>
+            <li><a href="https://new.shelterluv.com/matchme/adopt/HHRI/Dog?fbclid=IwY2xjawRSQhNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5peS1N1WOythfl1PRsIuUEN684DzQ2Pq4Igm3nXX0v4ObJK9GrM9rHAv0qWw_aem_Cll69NA_NTxcRPCytY4pRQ" class="hover:underline">Adoptable Pets</a></li>
             <li><a href="#help" class="hover:underline">How to Help</a></li>
           </ul>
         </div>
@@ -242,10 +225,10 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Support</h4>
+          <h4 class="font-semibold mb-4" >Support</h4>
           <ul class="space-y-2 opacity-70 text-sm">
             <li><a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">Get Involved</a></li>
-            <li><a href="#pets" class="hover:underline">Adopt Today</a></li>
+            <li><a href="https://new.shelterluv.com/matchme/adopt/HHRI/Dog?fbclid=IwY2xjawRSQhNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5peS1N1WOythfl1PRsIuUEN684DzQ2Pq4Igm3nXX0v4ObJK9GrM9rHAv0qWw_aem_Cll69NA_NTxcRPCytY4pRQ" class="hover:underline">Adopt Today</a></li>
             <li><a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">Contact Us</a></li>
           </ul>
         </div>
@@ -257,118 +240,7 @@
     </div>
   </footer>
 
-  <!-- Adoption Modal -->
-  <div id="adoption-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70">
-    <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 relative">
-      <button id="close-modal" class="absolute top-4 right-4 text-3xl opacity-60 hover:opacity-100 transition-opacity">×</button>
-      <div id="modal-content"></div>
-    </div>
-  </div>
 
-  <script>
-    // Pet data
-    const pets = [
-      { id: 1, name: 'Luna', breed: 'Golden Retriever Mix', age: '2 years', gender: 'Female', emoji: '🐕', color: '#FFD93D', 
-        description: 'Luna is a gentle soul who loves cuddles and long walks. She gets along great with other dogs and children.' },
-      { id: 3, name: 'Max', breed: 'Labrador', age: '4 years', gender: 'Male', emoji: '🦮', color: '#4D96FF', 
-        description: 'Max is a loyal companion who has been trained in basic obedience. He loves swimming and playing fetch.' },
-      { id: 6, name: 'Buddy', breed: 'Beagle Mix', age: '5 years', gender: 'Male', emoji: '🐶', color: '#FFB347', 
-        description: "Buddy is a sweet senior boy looking for a quiet home. He's house-trained and loves to snooze on the couch." },
-      { id: 7, name: 'Daisy', breed: 'Australian Shepherd', age: '3 years', gender: 'Female', emoji: '🐕', color: '#FF6B6B', 
-        description: 'Daisy is an energetic girl who loves to play fetch and go on adventures. She needs an active family!' },
-      { id: 8, name: 'Charlie', breed: 'Boxer Mix', age: '6 years', gender: 'Male', emoji: '🐕', color: '#A8B8FF', 
-        description: "Charlie is a gentle giant with a heart of gold. He's patient, loving, and great with kids." },
-      { id: 9, name: 'Bella', breed: 'Cocker Spaniel', age: '2 years', gender: 'Female', emoji: '🐕', color: '#FFB6C1', 
-        description: 'Bella is a sweet and playful girl who loves everyone she meets. She\'s perfect for families looking for a loving companion.' }
-    ];
-
-    // Render pet cards
-    function renderPets() {
-      const grid = document.getElementById('pets-grid');
-      grid.innerHTML = pets.map((pet, index) => `
-        <div class="pet-card rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl bg-white shadow-lg animate-fade-in" style="animation-delay: ${index * 0.1}s;">
-          <div class="pet-image aspect-square flex items-center justify-center transition-transform duration-500" 
-               style="background: linear-gradient(135deg, ${pet.color}40 0%, ${pet.color}20 100%);">
-            <span class="text-9xl">${pet.emoji}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-3">
-              <h3 class="font-display font-bold text-2xl">${pet.name}</h3>
-              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-600 text-white">${pet.age}</span>
-            </div>
-            <p class="opacity-70 mb-4">${pet.breed} • ${pet.gender}</p>
-            <button onclick="openAdoptionModal(${pet.id})" 
-                    class="w-full py-3 rounded-full font-semibold text-white transition-all hover:brightness-110"
-                    style="background-color: var(--color-primary);">
-              Meet ${pet.name} 💕
-            </button>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // Modal functions
-    function openAdoptionModal(petId) {
-      const pet = pets.find(p => p.id === petId);
-      if (!pet) return;
-
-      const modal = document.getElementById('adoption-modal');
-      const content = document.getElementById('modal-content');
-
-      content.innerHTML = `
-        <div class="text-center mb-6">
-          <div class="w-32 h-32 mx-auto rounded-full flex items-center justify-center mb-4" 
-               style="background: linear-gradient(135deg, ${pet.color}40 0%, ${pet.color}20 100%);">
-            <span class="text-6xl">${pet.emoji}</span>
-          </div>
-          <h3 class="font-display font-bold text-3xl mb-2">${pet.name}</h3>
-          <p class="opacity-70">${pet.breed} • ${pet.age} • ${pet.gender}</p>
-        </div>
-        <p class="mb-8 leading-relaxed">${pet.description}</p>
-        
-        <div class="p-4 rounded-xl mb-6 bg-gray-100">
-          <p class="font-semibold mb-2">📋 Adoption Requirements</p>
-          <ul class="text-sm opacity-70 space-y-1">
-            <li>• Valid ID and proof of residence</li>
-            <li>• Landlord approval (if renting)</li>
-            <li>• Meet & greet with existing pets</li>
-            <li>• Home check may be required</li>
-          </ul>
-        </div>
-
-        <button onclick="submitAdoption('${pet.name}')" 
-                class="w-full py-4 rounded-full font-bold text-lg text-white transition-all"
-                style="background-color: var(--color-primary);">
-          Apply to Adopt ${pet.name} 🐾
-        </button>
-      `;
-
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
-
-    function submitAdoption(petName) {
-      const content = document.getElementById('modal-content');
-      content.innerHTML = `
-        <div class="text-center py-12">
-          <div class="text-7xl mb-6">🎉</div>
-          <h3 class="font-display font-bold text-2xl mb-4">Application Submitted!</h3>
-          <p class="opacity-70 mb-8">Thank you for your interest in adopting ${petName}!<br>
-          Our team will contact you within 2-3 business days.</p>
-          <button onclick="closeModal()" 
-                  class="px-10 py-3 rounded-full font-semibold text-white"
-                  style="background-color: var(--color-secondary);">
-            Got It! 💚
-          </button>
-        </div>
-      `;
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('adoption-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
 
     // Mobile menu
     let mobileMenuOpen = false;
