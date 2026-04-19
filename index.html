@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearts 2 Homes Rescue</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-bg: #F3F4F6;
+      --color-surface: #FFFFFF;
+      --color-text: #1F2937;
+      --color-primary: #8B3A3A;
+      --color-secondary: #6B7280;
+    }
+
+    .font-display { font-family: 'Fraunces', serif; }
+    .font-body { font-family: 'DM Sans', sans-serif; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+
+    .pet-card:hover .pet-image { transform: scale(1.05); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139, 58, 58, 0.3); }
+    .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(107, 114, 128, 0.3); }
+
+    body { box-sizing: border-box; }
+  </style>
+</head>
+<body class="h-full font-body" style="background-color: var(--color-bg); color: var(--color-text);">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/95 backdrop-blur-lg shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-3xl">❤️</span>
+        <span class="font-display font-bold text-2xl" style="color: var(--color-primary);">Hearts 2 Homes</span>
+      </div>
+      
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="font-medium hover:text-red-700 transition-colors">About</a>
+        <a href="#pets" class="font-medium hover:text-red-700 transition-colors">Adopt</a>
+        <a href="#help" class="font-medium hover:text-red-700 transition-colors">How to Help</a>
+        <button onclick="alert('Thank you for your support! ❤️\n\nDonation link would go here.')" 
+                class="px-6 py-2.5 rounded-full font-semibold text-white transition-all hover:-translate-y-0.5"
+                style="background-color: var(--color-secondary);">
+          Donate
+        </button>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-3xl">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative pt-32 pb-20 px-6 overflow-hidden">
+    <div class="absolute top-20 right-10 text-8xl opacity-20 animate-float">🐕</div>
+    <div class="absolute bottom-10 left-10 text-6xl opacity-20 animate-float" style="animation-delay: 1s;">🐈</div>
+
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 id="hero-title" class="font-display font-bold text-5xl md:text-7xl mb-6 animate-fade-in" style="color: var(--color-text);">
+        Rural Texas Dogs<br><span style="color: var(--color-primary);">Deserve Forever Homes</span>
+      </h1>
+      <p id="hero-subtitle" class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto opacity-80 animate-fade-in animate-delay-1">
+        A foster-based rescue serving Wilson and Atascosa Counties. Rescuing, caring for, and finding loving homes for dogs in South Texas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-2">
+        <a href="#pets" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg transition-all inline-block"
+           style="background-color: var(--color-primary); color: white;">
+          Meet Dogs for Adoption 🐾
+        </a>
+        <a href="#help" class="px-8 py-4 rounded-full font-semibold text-lg border-2 transition-all hover:opacity-80 inline-block"
+           style="border-color: var(--color-text);">
+          Help Save Lives
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background-color: var(--color-secondary); color: white;">
+          Our Mission
+        </span>
+        <h2 id="about-title" class="font-display font-bold text-4xl md:text-5xl mb-6">
+          Rescue, Care &amp; Find<br>Forever Homes
+        </h2>
+        <p id="about-description" class="text-lg opacity-80 mb-8 leading-relaxed">
+          Founded by animal-loving women including cancer survivors, mothers and veterans, Hearts 2 Homes rescues dogs in Wilson and Atascosa Counties. 
+          We provide compassionate foster care and veterinary treatment, guiding each dog on their journey to safe, loving forever homes.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white">✓ Foster-Based Care</div>
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white">✓ Full Vet Care</div>
+          <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white">✓ Volunteer Driven</div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-square rounded-3xl p-8 flex items-center justify-center" 
+             style="background: linear-gradient(135deg, var(--color-primary) 0%, #F8A5C2 100%);">
+          <div class="text-center text-white">
+            <div class="text-9xl mb-4">🏠</div>
+            <div class="text-6xl flex justify-center gap-6">
+              <span class="animate-float">🐕</span>
+              <span class="animate-float" style="animation-delay: 0.5s;">❤️</span>
+              <span class="animate-float" style="animation-delay: 1s;">🤝</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adoptable Pets Section -->
+  <section id="pets" class="py-20 px-6" style="background-color: var(--color-surface);">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background-color: var(--color-primary); color: white;">
+          Find Your Match
+        </span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Dogs Ready for Adoption</h2>
+        <p class="text-lg opacity-70 max-w-2xl mx-auto">
+          Each dog has been vet-checked, vaccinated, spayed/neutered, and microchipped. They're ready to find their forever homes!
+        </p>
+      </div>
+
+      <div id="pets-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- How to Help Section -->
+  <section id="help" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background-color: var(--color-secondary); color: white;">
+          Make a Difference
+        </span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Ways to Help</h2>
+        <p class="text-lg opacity-70 max-w-2xl mx-auto">Every contribution, big or small, helps us save more lives.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
+          <div class="text-6xl mb-6">💝</div>
+          <h3 class="font-display font-bold text-2xl mb-4">Donate</h3>
+          <p class="opacity-70 mb-6">Your donation provides food, shelter, and medical care for animals in need.</p>
+          <button onclick="alert('Thank you! ❤️\n\nDonation page would open here.')" 
+                  class="w-full py-3 rounded-full font-semibold text-white"
+                  style="background-color: var(--color-primary);">
+            Give Now
+          </button>
+        </div>
+
+        <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
+          <div class="text-6xl mb-6">🤝</div>
+          <h3 class="font-display font-bold text-2xl mb-4">Volunteer</h3>
+          <p class="opacity-70 mb-6">Join our team of dedicated volunteers and help care for our furry friends.</p>
+          <a href="mailto:heart2homerescueinc@gmail.com" 
+             class="block w-full py-3 rounded-full font-semibold text-white text-center"
+             style="background-color: var(--color-primary);">
+            Join Us
+          </a>
+        </div>
+
+        <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
+          <div class="text-6xl mb-6">🏡</div>
+          <h3 class="font-display font-bold text-2xl mb-4">Foster</h3>
+          <p class="opacity-70 mb-6">Provide a temporary home for animals while they wait for their forever family.</p>
+          <a href="mailto:heart2homerescueinc@gmail.com" 
+             class="block w-full py-3 rounded-full font-semibold text-white text-center"
+             style="background-color: var(--color-primary);">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 relative overflow-hidden text-white" 
+           style="background: linear-gradient(135deg, var(--color-primary) 0%, #F8A5C2 100%);">
+    <div class="absolute top-10 left-10 text-8xl opacity-20">🐾</div>
+    <div class="absolute bottom-10 right-10 text-8xl opacity-20">🐾</div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 id="cta-title" class="font-display font-bold text-4xl md:text-5xl mb-6">Ready to Change a Life?</h2>
+      <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+        Visit our shelter today and meet your new best friend. Adoption fees include spaying/neutering, vaccinations, and microchipping.
+      </p>
+      <a href="#pets" class="inline-block px-10 py-5 rounded-full font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-2xl bg-white text-red-800">
+        Start Your Adoption Journey 🐾
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 px-6 text-white" style="background-color: var(--color-text);">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="text-3xl">❤️</span>
+            <span class="font-display font-bold text-xl" style="color: var(--color-primary);">Hearts 2 Homes</span>
+          </div>
+          <p class="opacity-70 text-sm">
+            A foster-based rescue serving Wilson and Atascosa Counties in South Texas, dedicated to saving lives and finding loving forever homes.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 opacity-70 text-sm">
+            <li><a href="#about" class="hover:underline">About Us</a></li>
+            <li><a href="#pets" class="hover:underline">Adoptable Pets</a></li>
+            <li><a href="#help" class="hover:underline">How to Help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 opacity-70 text-sm">
+            <li>📍 Floresville, TX 78114</li>
+            <li>📧 <a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">heart2homerescueinc@gmail.com</a></li>
+            <li>📞 <a href="tel:317-698-5163" class="hover:underline">317-698-5163</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Support</h4>
+          <ul class="space-y-2 opacity-70 text-sm">
+            <li><a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">Get Involved</a></li>
+            <li><a href="#pets" class="hover:underline">Adopt Today</a></li>
+            <li><a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/20 pt-8 text-center opacity-70 text-sm">
+        <p>© 2026 Hearts 2 Homes Rescue. All rights reserved. Made with 💝 for the animals.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Adoption Modal -->
+  <div id="adoption-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70">
+    <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 relative">
+      <button id="close-modal" class="absolute top-4 right-4 text-3xl opacity-60 hover:opacity-100 transition-opacity">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    // Pet data
+    const pets = [
+      { id: 1, name: 'Luna', breed: 'Golden Retriever Mix', age: '2 years', gender: 'Female', emoji: '🐕', color: '#FFD93D', 
+        description: 'Luna is a gentle soul who loves cuddles and long walks. She gets along great with other dogs and children.' },
+      { id: 3, name: 'Max', breed: 'Labrador', age: '4 years', gender: 'Male', emoji: '🦮', color: '#4D96FF', 
+        description: 'Max is a loyal companion who has been trained in basic obedience. He loves swimming and playing fetch.' },
+      { id: 6, name: 'Buddy', breed: 'Beagle Mix', age: '5 years', gender: 'Male', emoji: '🐶', color: '#FFB347', 
+        description: "Buddy is a sweet senior boy looking for a quiet home. He's house-trained and loves to snooze on the couch." },
+      { id: 7, name: 'Daisy', breed: 'Australian Shepherd', age: '3 years', gender: 'Female', emoji: '🐕', color: '#FF6B6B', 
+        description: 'Daisy is an energetic girl who loves to play fetch and go on adventures. She needs an active family!' },
+      { id: 8, name: 'Charlie', breed: 'Boxer Mix', age: '6 years', gender: 'Male', emoji: '🐕', color: '#A8B8FF', 
+        description: "Charlie is a gentle giant with a heart of gold. He's patient, loving, and great with kids." },
+      { id: 9, name: 'Bella', breed: 'Cocker Spaniel', age: '2 years', gender: 'Female', emoji: '🐕', color: '#FFB6C1', 
+        description: 'Bella is a sweet and playful girl who loves everyone she meets. She\'s perfect for families looking for a loving companion.' }
+    ];
+
+    // Render pet cards
+    function renderPets() {
+      const grid = document.getElementById('pets-grid');
+      grid.innerHTML = pets.map((pet, index) => `
+        <div class="pet-card rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl bg-white shadow-lg animate-fade-in" style="animation-delay: ${index * 0.1}s;">
+          <div class="pet-image aspect-square flex items-center justify-center transition-transform duration-500" 
+               style="background: linear-gradient(135deg, ${pet.color}40 0%, ${pet.color}20 100%);">
+            <span class="text-9xl">${pet.emoji}</span>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-display font-bold text-2xl">${pet.name}</h3>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-600 text-white">${pet.age}</span>
+            </div>
+            <p class="opacity-70 mb-4">${pet.breed} • ${pet.gender}</p>
+            <button onclick="openAdoptionModal(${pet.id})" 
+                    class="w-full py-3 rounded-full font-semibold text-white transition-all hover:brightness-110"
+                    style="background-color: var(--color-primary);">
+              Meet ${pet.name} 💕
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Modal functions
+    function openAdoptionModal(petId) {
+      const pet = pets.find(p => p.id === petId);
+      if (!pet) return;
+
+      const modal = document.getElementById('adoption-modal');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <div class="text-center mb-6">
+          <div class="w-32 h-32 mx-auto rounded-full flex items-center justify-center mb-4" 
+               style="background: linear-gradient(135deg, ${pet.color}40 0%, ${pet.color}20 100%);">
+            <span class="text-6xl">${pet.emoji}</span>
+          </div>
+          <h3 class="font-display font-bold text-3xl mb-2">${pet.name}</h3>
+          <p class="opacity-70">${pet.breed} • ${pet.age} • ${pet.gender}</p>
+        </div>
+        <p class="mb-8 leading-relaxed">${pet.description}</p>
+        
+        <div class="p-4 rounded-xl mb-6 bg-gray-100">
+          <p class="font-semibold mb-2">📋 Adoption Requirements</p>
+          <ul class="text-sm opacity-70 space-y-1">
+            <li>• Valid ID and proof of residence</li>
+            <li>• Landlord approval (if renting)</li>
+            <li>• Meet & greet with existing pets</li>
+            <li>• Home check may be required</li>
+          </ul>
+        </div>
+
+        <button onclick="submitAdoption('${pet.name}')" 
+                class="w-full py-4 rounded-full font-bold text-lg text-white transition-all"
+                style="background-color: var(--color-primary);">
+          Apply to Adopt ${pet.name} 🐾
+        </button>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function submitAdoption(petName) {
+      const content = document.getElementById('modal-content');
+      content.innerHTML = `
+        <div class="text-center py-12">
+          <div class="text-7xl mb-6">🎉</div>
+          <h3 class="font-display font-bold text-2xl mb-4">Application Submitted!</h3>
+          <p class="opacity-70 mb-8">Thank you for your interest in adopting ${petName}!<br>
+          Our team will contact you within 2-3 business days.</p>
+          <button onclick="closeModal()" 
+                  class="px-10 py-3 rounded-full font-semibold text-white"
+                  style="background-color: var(--color-secondary);">
+            Got It! 💚
+          </button>
+        </div>
+      `;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('adoption-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Mobile menu
+    let mobileMenuOpen = false;
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.querySelector('nav .hidden.md\\:flex');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenuOpen = !mobileMenuOpen;
+      if (mobileMenuOpen) {
+        navLinks.classList.remove('hidden');
+        navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-lg');
+        mobileBtn.textContent = '✕';
+      } else {
+        navLinks.classList.add('hidden');
+        navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-lg');
+        mobileBtn.textContent = '☰';
+      }
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Close modal when clicking outside
+    document.getElementById('adoption-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.getElementById('close-modal').addEventListener('click', closeModal);
+
+    // Initialize
+    renderPets();
+  </script>
+</body>
+</html>
