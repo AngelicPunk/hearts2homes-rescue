@@ -17,7 +17,6 @@
       --color-primary: #8B3A3A;
       --color-secondary: #6B7280;
     }
-
     .font-display { font-family: 'Fraunces', serif; }
     .font-body { font-family: 'DM Sans', sans-serif; }
 
@@ -34,14 +33,8 @@
     .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
     .animate-delay-1 { animation-delay: 0.1s; }
     .animate-delay-2 { animation-delay: 0.2s; }
-    .animate-delay-3 { animation-delay: 0.3s; }
-    .animate-delay-4 { animation-delay: 0.4s; }
 
-    .pet-card:hover .pet-image { transform: scale(1.05); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139, 58, 58, 0.3); }
-    .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(107, 114, 128, 0.3); }
-
-    body { box-sizing: border-box; }
   </style>
 </head>
 <body class="h-full font-body" style="background-color: var(--color-bg); color: var(--color-text);">
@@ -54,18 +47,22 @@
         <span class="font-display font-bold text-2xl" style="color: var(--color-primary);">Hearts 2 Homes</span>
       </div>
       
-      <div class="hidden md:flex items-center gap-8">
+      <div id="desktop-menu" class="hidden md:flex items-center gap-8">
         <a href="#about" class="font-medium hover:text-red-700 transition-colors">About</a>
         <a href="https://new.shelterluv.com/matchme/adopt/HHRI/Dog?fbclid=IwY2xjawRSQhNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5peS1N1WOythfl1PRsIuUEN684DzQ2Pq4Igm3nXX0v4ObJK9GrM9rHAv0qWw_aem_Cll69NA_NTxcRPCytY4pRQ" class="font-medium hover:text-red-700 transition-colors">Adopt</a>
         <a href="#help" class="font-medium hover:text-red-700 transition-colors">How to Help</a>
-        <button onclick="alert('Thank you for your support! ❤️\n\nDonation link would go here.')" 
-                class="px-6 py-2.5 rounded-full font-semibold text-white transition-all hover:-translate-y-0.5"
-                style="background-color: var(--color-secondary);">
+        
+        <!-- Venmo Donate Link -->
+        <a href="https://www.paypal.com/ncp/payment/X8DSVMTY6E2YU" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="px-6 py-2.5 rounded-full font-semibold text-white transition-all hover:-translate-y-0.5"
+           style="background-color: var(--color-secondary);">
           Donate
-        </button>
+        </a>
       </div>
 
-      <button id="mobile-menu-btn" class="md:hidden text-3xl">☰</button>
+      <button id="mobile-menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
     </div>
   </nav>
 
@@ -73,12 +70,11 @@
   <header class="relative pt-32 pb-20 px-6 overflow-hidden">
     <div class="absolute top-20 right-10 text-8xl opacity-20 animate-float">🐕</div>
     <div class="absolute bottom-10 left-10 text-6xl opacity-20 animate-float" style="animation-delay: 1s;">🐈</div>
-
     <div class="max-w-6xl mx-auto text-center">
-      <h1 id="hero-title" class="font-display font-bold text-5xl md:text-7xl mb-6 animate-fade-in" style="color: var(--color-text);">
+      <h1 class="font-display font-bold text-5xl md:text-7xl mb-6 animate-fade-in" style="color: var(--color-text);">
         Rural Texas Dogs<br><span style="color: var(--color-primary);">Deserve Forever Homes</span>
       </h1>
-      <p id="hero-subtitle" class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto opacity-80 animate-fade-in animate-delay-1">
+      <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto opacity-80 animate-fade-in animate-delay-1">
         A foster-based rescue serving Wilson and Atascosa Counties. Rescuing, caring for, and finding loving homes for dogs in South Texas.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-2">
@@ -101,10 +97,10 @@
         <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background-color: var(--color-secondary); color: white;">
           Our Mission
         </span>
-        <h2 id="about-title" class="font-display font-bold text-4xl md:text-5xl mb-6">
+        <h2 class="font-display font-bold text-4xl md:text-5xl mb-6">
           Rescue, Care &amp; Find<br>Forever Homes
         </h2>
-        <p id="about-description" class="text-lg opacity-80 mb-8 leading-relaxed">
+        <p class="text-lg opacity-80 mb-8 leading-relaxed">
           Founded by animal-loving women including cancer survivors, mothers and veterans, Hearts 2 Homes rescues dogs in Wilson and Atascosa Counties. 
           We provide compassionate foster care and veterinary treatment, guiding each dog on their journey to safe, loving forever homes.
         </p>
@@ -130,6 +126,35 @@
     </div>
   </section>
 
+  <!-- Adopt Section -->
+  <section id="pets" class="py-20 px-6" style="background-color: var(--color-surface);">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6" style="background-color: var(--color-primary); color: white;">
+          Adoptable Dogs
+        </span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Dogs Ready for Adoption</h2>
+        <p class="text-lg opacity-70 max-w-2xl mx-auto">
+          We currently have wonderful dogs looking for their forever homes in Wilson and Atascosa Counties.<br>
+          Please contact us to learn more about our available dogs and the adoption process.
+        </p>
+      </div>
+
+      <div class="max-w-md mx-auto bg-white rounded-3xl shadow-lg p-10 text-center">
+        <div class="text-6xl mb-6">🐾</div>
+        <h3 class="font-display font-bold text-2xl mb-4">Ready to Adopt?</h3>
+        <p class="text-gray-600 mb-8">
+          Reach out to our team and we'll help match you with the perfect dog.
+        </p>
+        <a href="mailto:heart2homerescueinc@gmail.com" 
+           class="inline-block px-8 py-4 rounded-full font-semibold text-white text-lg"
+           style="background-color: var(--color-primary);">
+          Contact Us About Adoption
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- How to Help Section -->
   <section id="help" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
@@ -142,33 +167,37 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
+        <!-- Donate Card with Venmo -->
         <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
           <div class="text-6xl mb-6">💝</div>
           <h3 class="font-display font-bold text-2xl mb-4">Donate</h3>
           <p class="opacity-70 mb-6">Your donation provides food, shelter, and medical care for animals in need.</p>
-          <button onclick="alert('Thank you! ❤️\n\nDonation page would open here.')" 
-                  class="w-full py-3 rounded-full font-semibold text-white"
-                  style="background-color: var(--color-primary);">
-            Give Now
-          </button>
+          
+          <a href="https://www.paypal.com/ncp/payment/X8DSVMTY6E2YU" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="block w-full py-3 rounded-full font-semibold text-white transition-all hover:-translate-y-0.5"
+             style="background-color: var(--color-primary);">
+            Donate Now
+          </a>
         </div>
 
         <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
           <div class="text-6xl mb-6">🤝</div>
           <h3 class="font-display font-bold text-2xl mb-4">Volunteer</h3>
           <p class="opacity-70 mb-6">Join our team of dedicated volunteers and help care for our furry friends.</p>
-          <a href="mailto:heart2homerescueinc@gmail.com" 
+          <a href="https://new.shelterluv.com/form/volunteer/HHRI/142572-volunteer?fbclid=IwY2xjawRSVnBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR41BPRI6qEyW3EENu4ZiSRk_2eCfzcXULYAYcjcGZjTTpFSZx-8EeZBhyFBlA_aem_cggEsiPdtCjl97WkB5zT_w" 
              class="block w-full py-3 rounded-full font-semibold text-white text-center"
              style="background-color: var(--color-primary);">
             Join Us
-          </a>x
+          </a>
         </div>
 
         <div class="p-8 rounded-3xl text-center transition-all hover:-translate-y-2 bg-white shadow-lg">
           <div class="text-6xl mb-6">🏡</div>
           <h3 class="font-display font-bold text-2xl mb-4">Foster</h3>
           <p class="opacity-70 mb-6">Provide a temporary home for animals while they wait for their forever family.</p>
-          <a href="mailto:heart2homerescueinc@gmail.com" 
+          <a href="https://new.shelterluv.com/matchme/foster/HHRI/Dog?fbclid=IwY2xjawRSVmZleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR7KhmNbbWLk0KgHLT0Ehti-ot-sKvDUFH8qASaTH4k7sguU9sDLKDRotGyEbA_aem_SLPW4SG_urqa0WTGAEq8UQ" 
              class="block w-full py-3 rounded-full font-semibold text-white text-center"
              style="background-color: var(--color-primary);">
             Learn More
@@ -183,14 +212,13 @@
            style="background: linear-gradient(135deg, var(--color-primary) 0%, #F8A5C2 100%);">
     <div class="absolute top-10 left-10 text-8xl opacity-20">🐾</div>
     <div class="absolute bottom-10 right-10 text-8xl opacity-20">🐾</div>
-
     <div class="max-w-4xl mx-auto text-center relative z-10">
-      <h2 id="cta-title" class="font-display font-bold text-4xl md:text-5xl mb-6">Ready to Change a Life?</h2>
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-6">Ready to Change a Life?</h2>
       <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-        Visit our shelter today and meet your new best friend. Adoption fees include spaying/neutering, vaccinations, and microchipping.
+        Visit our shelter today and meet your new best friend.
       </p>
-      <a href="#pets" class="inline-block px-10 py-5 rounded-full font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-2xl bg-white text-red-800">
-        Start Your Adoption Journey 🐾
+      <a href="https://new.shelterluv.com/matchme/adopt/HHRI/Dog?fbclid=IwY2xjawRSQhNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5peS1N1WOythfl1PRsIuUEN684DzQ2Pq4Igm3nXX0v4ObJK9GrM9rHAv0qWw_aem_Cll69NA_NTxcRPCytY4pRQ" class="inline-block px-10 py-5 rounded-full font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-2xl bg-white text-red-800">
+        Browse Adoptable Dogs 🐾
       </a>
     </div>
   </section>
@@ -225,60 +253,66 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4" >Support</h4>
+          <h4 class="font-semibold mb-4">Support</h4>
           <ul class="space-y-2 opacity-70 text-sm">
-            <li><a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">Get Involved</a></li>
+            <li><a href="https://new.shelterluv.com/form/volunteer/HHRI/142572-volunteer?fbclid=IwY2xjawRSVnBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR41BPRI6qEyW3EENu4ZiSRk_2eCfzcXULYAYcjcGZjTTpFSZx-8EeZBhyFBlA_aem_cggEsiPdtCjl97WkB5zT_w" class="hover:underline">Get Involved</a></li>
             <li><a href="https://new.shelterluv.com/matchme/adopt/HHRI/Dog?fbclid=IwY2xjawRSQhNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR5peS1N1WOythfl1PRsIuUEN684DzQ2Pq4Igm3nXX0v4ObJK9GrM9rHAv0qWw_aem_Cll69NA_NTxcRPCytY4pRQ" class="hover:underline">Adopt Today</a></li>
             <li><a href="mailto:heart2homerescueinc@gmail.com" class="hover:underline">Contact Us</a></li>
           </ul>
         </div>
       </div>
-
       <div class="border-t border-white/20 pt-8 text-center opacity-70 text-sm">
         <p>© 2026 Hearts 2 Homes Rescue. All rights reserved. Made with 💝 for the animals.</p>
       </div>
     </div>
   </footer>
 
-
-
-    // Mobile menu
-    let mobileMenuOpen = false;
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu
     const mobileBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.querySelector('nav .hidden.md\\:flex');
+    const desktopMenu = document.getElementById('desktop-menu');
+    let isOpen = false;
 
     mobileBtn.addEventListener('click', () => {
-      mobileMenuOpen = !mobileMenuOpen;
-      if (mobileMenuOpen) {
-        navLinks.classList.remove('hidden');
-        navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-lg');
+      isOpen = !isOpen;
+      if (isOpen) {
+        desktopMenu.classList.remove('hidden', 'md:flex');
+        desktopMenu.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-xl', 'border-t');
         mobileBtn.textContent = '✕';
       } else {
-        navLinks.classList.add('hidden');
-        navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-lg');
+        desktopMenu.classList.add('hidden', 'md:flex');
+        desktopMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-xl', 'border-t');
         mobileBtn.textContent = '☰';
       }
     });
 
-    // Smooth scrolling
+    // Smooth Scrolling + Close mobile menu
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        if (isOpen) {
+          isOpen = false;
+          desktopMenu.classList.add('hidden', 'md:flex');
+          desktopMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-xl', 'border-t');
+          mobileBtn.textContent = '☰';
+        }
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+          e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth' });
         }
       });
     });
 
-    // Close modal when clicking outside
-    document.getElementById('adoption-modal').addEventListener('click', function(e) {
-      if (e.target === this) closeModal();
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (isOpen && !e.target.closest('nav')) {
+        isOpen = false;
+        desktopMenu.classList.add('hidden', 'md:flex');
+        desktopMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'right-0', 'p-6', 'bg-white', 'shadow-xl', 'border-t');
+        mobileBtn.textContent = '☰';
+      }
     });
-    document.getElementById('close-modal').addEventListener('click', closeModal);
-
-    // Initialize
-    renderPets();
   </script>
 </body>
 </html>
